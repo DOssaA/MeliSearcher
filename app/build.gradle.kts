@@ -112,7 +112,7 @@ dependencies {
     testImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
     testImplementation("org.robolectric:robolectric:$robolectricVersion")
     testImplementation("io.insert-koin:koin-test:$koinVersion")
-    testImplementation("io.insert-koin:koin-test-junit:$koinVersion")
+    testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
 
     androidTestImplementation("androidx.test.ext:junit:${getVersionString("testExtJunit")}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${getVersionString("espressoVersion")}")
