@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MeLiTest</string>
+    <string name="search_placeholder">Buscar en Mercado Libre</string>
 </resources>
