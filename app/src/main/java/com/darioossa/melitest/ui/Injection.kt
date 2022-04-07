@@ -1,5 +1,6 @@
 package com.darioossa.melitest.ui
 
+import com.darioossa.melitest.ui.detail.DetailViewModel
 import com.darioossa.melitest.ui.results.ResultsViewModel
 import com.darioossa.melitest.ui.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -9,5 +10,6 @@ object Injection {
     val presentationModule = module {
         viewModel { SearchViewModel() }
         viewModel { (text: String) -> ResultsViewModel(text, get()) }
+        viewModel { (itemId: String) -> DetailViewModel(itemId, get()) }
     }
 }

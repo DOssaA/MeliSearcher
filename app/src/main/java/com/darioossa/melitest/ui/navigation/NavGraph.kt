@@ -38,8 +38,10 @@ fun NavGraph(
             route = Screen.Detail.route,
             arguments = listOf(navArgument(ARG_ITEM_ID) { type = NavType.StringType })
         ) {
-            // val itemId = it.arguments?.getString(ARG_ITEM_ID)
-            DetailScreen()
+            val itemId = it.arguments?.getString(ARG_ITEM_ID)
+            DetailScreen(getViewModel(parameters = {
+                parametersOf(itemId)
+            }), router.navigateBack)
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.darioossa.melitest.data.remote
 
+import com.darioossa.melitest.domain.entity.SearchResult
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -23,5 +24,12 @@ class SearchRemoteTest {
         coEvery { api.getResults("query") } returns SearchRawResult(listOf())
         remote.getResults("query").launchIn(this)
         coVerify { api.getResults("query") }
+    }
+
+    @Test
+    fun getDetails() = runBlocking {
+        coEvery { api.getDetail("1") } returns SearchResult("1")
+        remote.getDetail("1")
+        coVerify { api.getDetail("1") }
     }
 }

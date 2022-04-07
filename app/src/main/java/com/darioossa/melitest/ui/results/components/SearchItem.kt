@@ -15,6 +15,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import coil.compose.rememberImagePainter
 import com.darioossa.melitest.R
 import com.darioossa.melitest.domain.entity.SearchResult
@@ -50,8 +51,11 @@ fun SearchItem(
             Column {
                 Text(text = content.title, style = MaterialTheme.typography.body1)
                 Spacer(modifier = Modifier.width(MarginTiny))
-                Text(text = "$${content.price} ${content.currency_id}",
-                    style = MaterialTheme.typography.body2)
+                Text(
+                    text = stringResource(id = R.string.price_format)
+                        .format(content.price, content.currency_id),
+                    style = MaterialTheme.typography.body2
+                )
             }
         }
     }

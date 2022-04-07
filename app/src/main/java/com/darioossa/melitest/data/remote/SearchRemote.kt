@@ -8,4 +8,6 @@ class SearchRemote(private val api: SearchApi): SearchRemoteDataSource {
     override suspend fun getResults(query: String): Flow<List<SearchResult>> = flow {
         emit(api.getResults(query).results)
     }
+
+    override suspend fun getDetail(itemId: String): SearchResult = api.getDetail(itemId)
 }
