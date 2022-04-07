@@ -13,5 +13,6 @@ object Injection {
     val domainModule = module {
         single(named(DISPATCHER)) { Dispatchers.IO }
         factory { SearchTextUseCase(get(), dispatcher) }
+        factory { GetDetailUseCase(get(), dispatcher) }
     }
 }

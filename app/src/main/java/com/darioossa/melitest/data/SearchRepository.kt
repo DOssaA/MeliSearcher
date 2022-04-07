@@ -8,4 +8,7 @@ import kotlinx.coroutines.flow.Flow
 class SearchRepository(private val remote: SearchRemoteDataSource): SearchDataSource {
     override suspend fun getResults(query: String): Flow<List<SearchResult>> =
         remote.getResults(query)
+
+    override suspend fun getDetail(itemId: String): SearchResult =
+        remote.getDetail(itemId)
 }
