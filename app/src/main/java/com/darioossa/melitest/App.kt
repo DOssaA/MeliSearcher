@@ -1,7 +1,9 @@
 package com.darioossa.melitest
 
 import android.app.Application
-import com.darioossa.melitest.injection.Injection.presentationModule
+import com.darioossa.melitest.data.Injection.dataModule
+import com.darioossa.melitest.domain.Injection.domainModule
+import com.darioossa.melitest.ui.Injection.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -14,7 +16,7 @@ class App: Application() {
         startKoin {
             androidContext(this@App)
             androidLogger(Level.ERROR)
-            modules(listOf(presentationModule))
+            modules(listOf(presentationModule, domainModule, dataModule))
         }
     }
 }
